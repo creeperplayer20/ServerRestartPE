@@ -7,15 +7,15 @@ author: VMPE Development Team
 description: Restarts your server at given interval.
 website: https://github.com/iJoshuaHD/ASR
 commands:
- asr:
-  description: "Set ASR Time"
+ sr:
+  description: "Set ServerRestart Time"
   permission: asr.command.asr
  restart:
   description: "Check ASR Status"
   permission: asr.command.restart
 permissions:
- asr.command.asr:
-  description: "Usage: /asr <value>"
+ sr.command.sr:
+  description: "Usage: /sr <value>"
   default: op
  asr.command.restart:
   description: "Usage: /restart"
