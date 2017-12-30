@@ -89,7 +89,7 @@ class Loader extends PluginBase{
 	*/
 		if($timer == 1){
 			$this->start($this->restart_time + 1);
-			return;
+			return true;
 		}else{
 			$timer--;
 			$this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this,"initial_start" ], [$timer]), 20);
@@ -103,7 +103,7 @@ class Loader extends PluginBase{
 		$this->broadcast("Server will restart in $time_target $offset");
 		if($time_target == 1){
 			$this->count_down($this->count_down + 1);
-			return;
+			return true;
 		}
 		$this->setTimer($time_target, $offset);
 		if($time_target < $this->restart_time){
@@ -115,16 +115,16 @@ class Loader extends PluginBase{
 	public function count_down($seconds){
 		if($seconds == 1){
 			foreach($this->getServer()->getOnlinePlayers() as $p){
-				$p->kick("Server Restart");
+				$p->kick("§aServer has been restarted. Rejoin.");
 			}
 			$this->getServer()->shutdown();
-			return;
+			return true;
 		}else{
 			$seconds--;
 			$this->setTimer($seconds, "secs.");
-			if($seconds == 30) $this->broadcast("Server will restart in $seconds seconds.");
-			if($seconds == 10) $this->broadcast("Server will restart in $seconds seconds.");
-			if($seconds < 6) $this->broadcast("Server will restart in $seconds.");
+			if($seconds == 30) $this->broadcast("§5Server will restart in $seconds seconds.");
+			if($seconds == 10) $this->broadcast("§2Server will restart in $seconds seconds.");
+			if($seconds < 6) $this->broadcast("§3Server will restart in $seconds.");
 			$this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this,"count_down" ], [$seconds]), 20);
 		}
 	}
