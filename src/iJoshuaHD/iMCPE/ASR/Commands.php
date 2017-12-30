@@ -21,7 +21,7 @@ class Commands implements CommandExecutor{
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch(strtolower($command->getName())){
 		
-			case "asr":
+			case "sr":
 				if(isset($args[0])){
 					if(!is_numeric($args[0])){
 						$sender->sendMessage("§aOnly numbers are allowed.");
