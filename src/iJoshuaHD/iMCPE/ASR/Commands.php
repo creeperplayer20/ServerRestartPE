@@ -18,30 +18,33 @@ class Commands implements CommandExecutor{
 		$this->plugin = $plugin;
 	}
 	
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch(strtolower($command->getName())){
 		
 			case "asr":
 				if(isset($args[0])){
 					if(!is_numeric($args[0])){
-						$sender->sendMessage("[ASR] Only Numbers is prohibited.");
-						return;
+						$sender->sendMessage("§aOnly numbers are allowed.");
+						return true;
 					}
 					if($args[0] > 60){
-						$sender->sendMessage("[ASR] It's not advised the value would be more than 60. If you want to increase it, edit the config.yml instead as this plugin won't allow you to set the value more than the said value because it's not prescribed.");
-						$sender->sendMessage("[ASR] Only Numbers is prohibited.");
-						return;
+						$sender->sendMessage("§cI'm sorry, but you are unable to go over 60 minutes. It has a limit.");
+						$sender->sendMessage("§dOnly Numbers are allowed.");
+						return true;
 					}
 					$this->plugin->setValueTimer($args[0]);
-					$sender->sendMessage("[ASR] You have set the timer to " . $args[0] . " min/s. The changes will apply after the next server restart.");
+					$sender->sendMessage("§bYou have set the Restart timer to §3" . $args[0] . " min/s. §bThe changes will apply after the next server restart.");
+					return true;
 				}else{
-					$sender->sendMessage("Usage: /asr <value>");
+					$sender->sendMessage("§5Please use: §2/asr <value>");
+					return true;
 				}
 			break;
 		
 			case "restart":
 				$time = $this->plugin->getTimer();
-				$sender->sendMessage("[ASR] The server will restart in $time");
+				$sender->sendMessage("§7[§cRestart§7] §dThe server will restart in $time");
+				return true;
 			break;
 		
 		}
