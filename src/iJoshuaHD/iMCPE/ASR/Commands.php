@@ -36,7 +36,7 @@ class Commands implements CommandExecutor{
 					$sender->sendMessage("§bYou have set the Restart timer to §3" . $args[0] . " min/s. §bThe changes will apply after the next server restart.");
 					return true;
 				}else{
-					$sender->sendMessage("§5Please use: §2/asr <value>");
+					$sender->sendMessage("§5Please use: §2/sr <value>");
 					return true;
 				}
 			break;
