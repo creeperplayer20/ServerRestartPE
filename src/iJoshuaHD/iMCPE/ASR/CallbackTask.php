@@ -44,11 +44,11 @@ class CallbackTask extends Task{
 	/**
 	 * @return callable
 	 */
-	public function getCallable(){
+	public function getCallable(): callable{
 		return $this->callable;
 	}
 
-	public function onRun($currentTicks){
+	public function onRun(int $currentTick){
 		call_user_func_array($this->callable, $this->args);
 	}
 
