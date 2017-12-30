@@ -1,9 +1,9 @@
-name: ASR
+name: ServerRestartPE
 main: iJoshuaHD\iMCPE\ASR\Loader
-version: 2.0.2
-api: [1.13.0, 1.14.0, 2.0.0]
+version: 3.0.0-B1
+api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
 load: STARTUP
-author: iJoshuaHD
+author: VMPE Development Team
 description: Restarts your server at given interval.
 website: https://github.com/iJoshuaHD/ASR
 commands:
