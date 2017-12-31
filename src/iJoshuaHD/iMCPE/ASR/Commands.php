@@ -27,8 +27,8 @@ class Commands implements CommandExecutor{
 						$sender->sendMessage("§aOnly numbers are allowed.");
 						return true;
 					}
-					if($args[0] > 60){
-						$sender->sendMessage("§cI'm sorry, but you are unable to go over 60 minutes. It has a limit.");
+					if($args[0] > 90){
+						$sender->sendMessage("§cI'm sorry, but you are unable to go over 90 minutes. It has a limit.");
 						$sender->sendMessage("§dOnly Numbers are allowed.");
 						return true;
 					}
