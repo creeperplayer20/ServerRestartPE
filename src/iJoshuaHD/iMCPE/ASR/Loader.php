@@ -122,9 +122,9 @@ class Loader extends PluginBase{
 		}else{
 			$seconds--;
 			$this->setTimer($seconds, "secs.");
-			if($seconds == 30) $this->broadcast("§5Server will restart in $seconds seconds.");
-			if($seconds == 10) $this->broadcast("§2Server will restart in $seconds seconds.");
-			if($seconds < 6) $this->broadcast("§3Server will restart in $seconds.");
+			if($seconds == 30) $this->broadcast("§5Server will restart in §d$seconds §5seconds.");
+			if($seconds == 10) $this->broadcast("§2Server will restart in §a$seconds §2seconds.");
+			if($seconds < 6) $this->broadcast("§3Server will restart in §b$seconds §3seconds..");
 			$this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this,"count_down" ], [$seconds]), 20);
 		}
 	}
@@ -147,7 +147,7 @@ class Loader extends PluginBase{
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 			$this->preferences->set("Version", "3.0.0-B1");
 			$this->preferences->set("TimeToRestart", 90);
-			$this->preferences->set("Prefix", "[Restart]");
+			$this->preferences->set("Prefix", "§7[§cRestart§7]");
 			$this->preferences->set("Logger_DB", false);
 			$this->preferences->save();
 			$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] Note: Logger is disabled by default.");
@@ -175,7 +175,7 @@ class Loader extends PluginBase{
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates [...]");
 					$this->preferences->set("Version", "3.0.0-B1");
 					$this->preferences->set("TimeToRestart", 90);
-					$this->preferences->set("Prefix", "[Restart]");
+					$this->preferences->set("Prefix", "§7[§cRestart§7]");
 					$this->preferences->set("Logger_DB", false);
 					$this->preferences->save();
 					$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
