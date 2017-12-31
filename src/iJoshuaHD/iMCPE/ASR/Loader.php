@@ -100,7 +100,7 @@ class Loader extends PluginBase{
 		$time_target--;
 		if($time_target == 1) $offset = "min.";
 		else $offset = "mins.";
-		$this->broadcast("Server will restart in $time_target $offset");
+		$this->broadcast("§dServer will restart in §5$time_target §d$offset");
 		if($time_target == 1){
 			$this->count_down($this->count_down + 1);
 			return true;
