@@ -146,8 +146,8 @@ class Loader extends PluginBase{
 			@mkdir($this->getDataFolder(), 0777, true);
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 			$this->preferences->set("Version", "3.0.0-B1");
-			$this->preferences->set("TimeToRestart", 30);
-			$this->preferences->set("Prefix", "[ASR]");
+			$this->preferences->set("TimeToRestart", 90);
+			$this->preferences->set("Prefix", "[Restart]");
 			$this->preferences->set("Logger_DB", false);
 			$this->preferences->save();
 			$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] Note: Logger is disabled by default.");
@@ -174,8 +174,8 @@ class Loader extends PluginBase{
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using an older version of ASR.");
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates [...]");
 					$this->preferences->set("Version", "3.0.0-B1");
-					$this->preferences->set("TimeToRestart", 30);
-					$this->preferences->set("Prefix", "[ASR]");
+					$this->preferences->set("TimeToRestart", 90);
+					$this->preferences->set("Prefix", "[Restart]");
 					$this->preferences->set("Logger_DB", false);
 					$this->preferences->save();
 					$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
