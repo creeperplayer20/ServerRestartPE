@@ -1,7 +1,7 @@
 name: ServerRestartPE
 main: iJoshuaHD\iMCPE\ASR\Loader
 version: 3.0.0-B1
-api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
+api: [3.0.0, 3.11.6, 3.0.0-ALPHA9, 3.0.0-ALPHA10]
 load: STARTUP
 author: VMPE Development Team
 description: Restarts your server at given interval.
@@ -19,4 +19,4 @@ permissions:
   default: op
  asr.command.restart:
   description: "Usage: /restart"
-  default: true
+  default: op
